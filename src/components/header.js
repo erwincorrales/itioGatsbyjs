@@ -13,7 +13,7 @@ const Header = ({nohome}) => {
   const [show, setShow] = React.useState(false);
 
   const location = useLocation().pathname;
-  console.log(location)
+  const urlFolderProduction = '/itioGatsbyjs'
 
   return(
   <header className={st.navbar}
@@ -43,19 +43,19 @@ const Header = ({nohome}) => {
     <nav className={show ? st.nav : st.hide}>
       <Link to='/cases' className={st.link}  onClick={()=>setShow(false)}>
         <StaticImage src='../images/header/itiostudiesicon.png' width={84} className='d-md-none' alt='casefolder'/>
-        <MenuButton label='CASE STUDIES' pressed ={location === '/cases'} />
+        <MenuButton label='CASE STUDIES' pressed ={location === `${urlFolderProduction}/cases`} />
       </Link>
       <Link to='/careers' className={st.link} onClick={()=>setShow(false)}>
         <StaticImage src='../images/header/itiocontacticon.png' width={84} className='d-md-none' alt='casefolder'/>
-        <MenuButton label='CAREERS' pressed ={location === '/careers'}/>
+        <MenuButton label='CAREERS' pressed ={location === `${urlFolderProduction}/careers`}/>
       </Link>
       <Link to ='/contact' className={st.link} onClick={()=>setShow(false)}>
         <StaticImage src='../images/header/itiocareericon.png' width={84} className='d-md-none' alt='casefolder'/>
-        <MenuButton label='CONTACT' pressed ={location === '/contact'}/>
+        <MenuButton label='CONTACT' pressed ={location === `${urlFolderProduction}/contact`}/>
       </Link>  
       {
         !nohome &&(    
-          <Link to='/' className={location === '/' ? 'd-none': st.link} onClick={()=>setShow(false)}>
+          <Link to='/' className={location === `${urlFolderProduction}/` ? 'd-none': st.link} onClick={()=>setShow(false)}>
             <MenuButton label='HOME'/>
           </Link>
         )
