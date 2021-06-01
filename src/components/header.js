@@ -13,6 +13,7 @@ const Header = ({nohome}) => {
   const [show, setShow] = React.useState(false);
 
   const location = useLocation().pathname;
+  console.log(location)
 
   return(
   <header className={st.navbar}

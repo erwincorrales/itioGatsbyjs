@@ -48,7 +48,7 @@ const Form = ()=>{
                             <span></span>
                         </label>
                         <label>
-                            <input type='radio'  name='job'  value='Logo Design' checked/>
+                            <input type='radio'  name='job'  value='Logo Design'/>
                             Logo Design
                             <span></span>
                         </label>
