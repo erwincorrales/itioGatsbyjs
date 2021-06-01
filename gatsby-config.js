@@ -1,7 +1,8 @@
 module.exports = {
+  pathPrefix: "/itioGatsbyjs",
   siteMetadata: {
     title: `ITIO`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `ITIO, we make your IT ideas become true`,
     author: `ITIO`,
   },
   plugins: [
