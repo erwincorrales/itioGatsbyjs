@@ -15,8 +15,6 @@ const BrowserCard = ({noMenubar, closebutton, rounded, slimInnerPadding, childre
             </div>
             <div className={ slimInnerPadding ? 'pt-3': 'px-4 pt-3 '}>
                 {children}
-                {/* <div className={st.h1}>{title}</div>
-                <p className={st.paragraph}>{text}</p> */}
             </div>
         </div>
     )

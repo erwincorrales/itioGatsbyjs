@@ -66,8 +66,12 @@ const Careers = () =>{
                             <p>Work at the most dynamic and sucessful agency. We're hiring.</p>
                         </div>
                         <BtnContainer>
-                            <Button label='APPLY NOW' small pressed/>
-                            <Button label='APPLY NOW'/>
+                            <div>
+                                <Button label='APPLY NOW' small pressed/>
+                            </div>
+                            <div>
+                                <Button label='APPLY NOW' small/>
+                            </div>
                         </BtnContainer>
                     </Jobs>
                     <Jobs>
@@ -79,8 +83,12 @@ const Careers = () =>{
                             <p>Work at the most dynamic and sucessful agency. We're hiring.</p>
                         </div>
                         <BtnContainer>
-                            <Button label='APPLY NOW' small pressed />
-                            <Button label='APPLY NOW'/>
+                            <div>
+                                <Button label='APPLY NOW' small pressed/>
+                            </div>
+                            <div>
+                                <Button label='APPLY NOW' small/>
+                            </div>
                         </BtnContainer>
                     </Jobs>
                     <Jobs>
@@ -93,8 +101,12 @@ const Careers = () =>{
                             <p className='d-none d-md-block'>Work at the most dynamic and sucessful agency. We're hiring.</p>
                         </div>
                         <BtnContainer>
-                            <Button label='APPLY NOW' small pressed />
-                            <Button label='APPLY NOW' small />
+                            <div>
+                                <Button label='APPLY NOW' small pressed/>
+                            </div>
+                            <div>
+                                <Button label='APPLY NOW' small/>
+                            </div>
                         </BtnContainer>
                     </Jobs>
                 </ApplySection>
@@ -293,23 +305,22 @@ const Jobs = styled.section`
     }
 `
 const BtnContainer = styled.div`
- width: 135px;
- display: block;
+    width: 135px;
+    display: block;
 
- div:nth-child(2){
-     display:none;
- }
-
- @media (min-width: 991px){
-        width: 156px;
-    
-        /* div:nth-child(2){
-            display:block;
-        } */
-
-        /* div:nth-child(1){
-            display: none;
-        } */
+    & > div:nth-child(2){
+        display: none;
     }
+    
 
+    @media (min-width: 991px){
+            width: 156px;
+
+            & > div:nth-child(1){
+                display: none;
+            }
+            & > div:nth-child(2){
+                display: block;
+            }
+        }
 `

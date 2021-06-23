@@ -104,11 +104,11 @@ return(
         <p className='d-none d-md-block d-lg-none'>The main dashboard and the backend were really easy to Make.<br/> The only real challenge there was to structure the organization and user access.</p>
         <p className='d-none d-md-block d-lg-none'>The main difficulty was to have a script running on their clients website, <br/>that doesn't interfere with their regular user experience.</p>
         <p className='d-none d-lg-block'>The main dashboard and the backend were realliy easy to make.<br/> The only real challenge there was to structure the organization and user<br/> access. The main difficulty was to have a script running on their clients<br/> website, that doesn't interfere with their regular user experience.</p>
-        <StaticImage src='../../images/studies/koalaqa/ITIO-koalaqa-3.png' alt='koalaga-3' />
+        <StaticImage src='../../images/studies/koalaqa/ITIO-koalaqa-3.png' alt='koalaga-3' className='mt-5' />
         <TopicContainer className='d-lg-flex w-100'>
           <Topic>
             <PicIconsContainer2>
-              <StaticImage src='../../images/studies/koalaqa/koala-buzzer.png' alt='koalaga-3' />
+              <StaticImage src='../../images/studies/koalaqa/koala-buzzer.png' alt='koalaga-3'/>
             </PicIconsContainer2>
             <div>
               <p className='d-md-none'>At the end we successfully allowed<br/> the clients who want feedback<br/> to simply drop a snippet in <br/> their website.</p>

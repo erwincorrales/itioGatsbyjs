@@ -56,3 +56,10 @@
     margin-right: 10px;
     border-radius: 50%;
 }
+
+
+@media (min-width: 767px) {
+    .container .containerRounded{
+        box-shadow: 20px 20px 0px black;
+    }
+}

@@ -1,11 +1,35 @@
-import { StaticImage } from 'gatsby-plugin-image';
-import React from 'react';
+import React, { useState, useRef } from 'react';
+
 import { Col, Row } from 'react-bootstrap';
+import { StaticImage } from 'gatsby-plugin-image';
+
 import styled from 'styled-components';
 import BrowserCard from '../browsercard';
 import Button from '../button';
 
-const Form = ()=>{
+const Form = () =>{
+    const firstNameRef = useRef('');
+    const lastNameRef = useRef('');
+    const mailRef = useRef('');
+    const phoneRef = useRef('');
+    const messageRef = useRef('');
+    const jobRef = useRef('');
+
+    const validate = () =>{ 
+        if (!firstNameRef.current.value) return false;
+        if (!lastNameRef.current.value) return false;
+        if (!mailRef.current.value) return false;
+        if (!phoneRef.current.value) return false;
+        if (!messageRef.current.value) return false;
+        if (!jobRef.current.value) return false;
+    }
+    
+    const submitForm = () =>{
+        if( validate() ){
+            
+        }
+    }
+
     return(
         <Container >
             <Leaf>
@@ -16,46 +40,46 @@ const Form = ()=>{
                     <Row>
                         <Col md={6} className='d-flex flex-column align-content-start'>
                             <label htmlFor='fname'>First Name</label>
-                            <input type='text' name='fname'/>
+                            <input type='text' name='fname' ref = {firstNameRef}  required/>
                         </Col>
                         <Col md={6} className='d-flex flex-column text-left align-content-start'>
                             <label htmlFor='lname'>Last Name</label>
-                            <input type='text' name='lname' />
+                            <input type='text' name='lname'  ref = {lastNameRef} required/>
                         </Col>
                     </Row>
                     <Row>
                         <Col md={6} className='d-flex flex-column text-left align-content-start'>
                             <label htmlFor='mail'>Mail</label>
-                            <input type='email' name='mail' />
+                            <input type='email' name='mail'  ref = {mailRef} required/>
                         </Col>
                         <Col md={6} className='d-flex flex-column text-left align-content-start'>
                             <label htmlFor='phone'>Phone</label>
-                            <input type='tel' name='phone' />
+                            <input type='tel' name='phone'  ref = {phoneRef} required/>
                         </Col>
                     </Row>
                     <Row>
                         <strong>What do you need?</strong>
                     </Row>
-                    <Row className='d-md-flex flex-md-nowrap text-nowrap justify-content-lg-between w-100'>
-                        <label>
-                            <input type='radio' name='job'  value='Web Design'  />
+                    <Row className='d-flex flex-md-nowrap text-nowrap justify-content-lg-between w-100'>
+                        <label className='align-content-center'>
+                            <input type='radio' name='job' ref = {jobRef} value='Web Design' />
                             Web Design
                             <span className></span>
                         </label>
-                        <label>
-                            <input type='radio'  name='job'  value='Web Development'/>
+                        <label className='align-content-center'>
+                            <input type='radio'  name='job' ref = {jobRef} value='Web Development'/>
                             Web Development
-                            <span></span>
+                            <span className='align-self-center'></span>
                         </label>
-                        <label>
-                            <input type='radio'  name='job'  value='Logo Design'/>
+                        <label className='align-content-center'>
+                            <input type='radio'  name='job' ref = {jobRef} value='Logo Design'/>
                             Logo Design
-                            <span></span>
+                            <span className='align-self-center'></span>
                         </label>
-                        <label>
-                            <input type='radio' name='job'  value='Other'/>
-                            Other
-                            <span></span>
+                        <label className='align-content-center'>
+                            <input type='radio' name='job' ref = {jobRef} value='Other'/>
+                                Other
+                            <span className='align-self-center'></span>
                         </label>
                     </Row>
                     <Row>
@@ -63,15 +87,15 @@ const Form = ()=>{
                     </Row>
                     <Row>
                         <Col>
-                            <textarea name='message' rows='3' cols='50' placeholder='Write Something here'/>
+                            <textarea name='message' rows='3' cols='50'  ref={messageRef} placeholder='Write Something here'/>
                         </Col>
                     </Row>
                     <Submit>
                         <div className='d-block d-lg-none'>
-                            <Button label='SEND MESSAGE' pressed small/>
+                            <Button label='SEND MESSAGE' pressed small onClick={submitForm}/>
                         </div>
                         <div className='d-none d-lg-block'>
-                            <Button label='SEND MESSAGE' small />
+                            <Button label='SEND MESSAGE' small onClick={submitForm} />
                         </div>
                     </Submit>
                 </InnerContainer>
@@ -110,9 +134,16 @@ const Container = styled.div`
     input[type='text']:focus , input[type='email']:focus , input[type='tel']:focus {
         border: 3px solid #9E6CFF;
     }
+    input[type='text']:hover , input[type='email']:hover , input[type='tel']:hover {
+        border: 3px solid #9E6CFF;
+    }
     
     label:hover{
         color: #9E6CFF; font-weight: bolder;
+    }
+
+    label:hover ~ input{
+        border: 3px solid #9E6CFF;
     }
 
 
@@ -120,11 +151,9 @@ const Container = styled.div`
         cursor: pointer;
     }
 
-    
-
     input[type='radio']{
         display: none; padding: 0;
-        margin-bottom: 0px;
+        margin: 0px;
     }
 
     div:nth-child(3) strong{
@@ -163,17 +192,19 @@ const Container = styled.div`
 
     input:checked ~ span{
         background: #9E6CFF;
+        border: 3px solid black;
     }
 
-    input:checked ~span:after{
-        left: 9px;
-        top: 5px;
+    input:checked ~ span:after{
+        left: 6px;
+        top: 2px;
         width: 5px;
         height: 10px;
-        border: solid black;
+        border: 0 solid black;
         border-width: 0 3px 3px 0;
+        display:block;
+        transform: rotate(45deg);
     }
-
 
     @media (min-width:767px){
         max-width: 605px;
@@ -194,12 +225,17 @@ const Container = styled.div`
             padding: 0; margin: 0;
             
             span{
-                width: 16px; height: 16px; 
+                width: 21px; height: 21px; 
             }
         }
 
         div:nth-child(5) strong{
             padding-top:34px;
+        }
+
+        input:checked ~ span:after{
+            left: 5px;
+            top: 1px;
         }
     }
 
@@ -207,12 +243,8 @@ const Container = styled.div`
         max-width: 878px;
 
         textarea{
-            height:90px
+            height:90px;
         }
-
-        /* div:nth-child(4) label{
-            width:25%;
-        } */
     }
 `
 const Leaf = styled.div`

@@ -31,9 +31,9 @@ const Contact = () => (
             </ContactHeader>
 
             <Contactitem>
-              <ContainerImage1>
+              <ContainerImage>
                 <StaticImage src='../images/contact/itio-contact-phone.png' alt='itio' />
-              </ContainerImage1>
+              </ContainerImage>
               <div>+57 321 6964575</div>
             </Contactitem>
             <Contactitem>
@@ -148,6 +148,11 @@ const InnerContactDataWrapper = styled.div`
 `
 
 const ContactHeader = styled.div`
+
+  p{
+    margin-left: 0;
+  }
+
   @media (min-width: 767px){
     max-width: 463px;
     margin-bottom: 60px;
@@ -162,7 +167,7 @@ const Contactitem = styled.div`
   padding: 7px 0;
 
   div:nth-child(2){
-    margin-left:10px;
+    margin-left:20px;
   }
 
   @media (min-width: 767px){
@@ -219,17 +224,34 @@ const BookContainer = styled.div`
     right: -164px;
   }
 `
-const ContainerImage1 = styled.div`
+const ContainerImage = styled.div`
   width: 24px;
   height: 24px;
+  margin-top: 7px;
 
   @media (min-width: 767px){
     width: 45px;
     height: 45px;
+    margin-top: 10px;
+  }
+
+`
+
+const ContainerImage1 = styled.div`
+  width: 24px;
+  height: 24px;
+  margin-top: 6px;
+
+  @media (min-width: 767px){
+    width: 45px;
+    height: 45px;
+    margin-top: 10px;
   }
 `
 const ContainerImage2 = styled.div`
   width: 20px; height: 15px; 
+  margin-top: -12px; 
+  margin-left: 3px;
 
   @media (min-width: 767px){
     width: 45px;
@@ -266,5 +288,4 @@ const ContainerSocialImg2 = styled.div`
  
 const MessageSection=styled.section`
   margin-top: 72px;
-
 `
