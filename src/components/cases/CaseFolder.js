@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import styled from 'styled-components';
 
-const CaseFolder = ({title, link}) =>{
+const CaseFolder = ( { title, link }) =>{
     const [open, setOpen] = React.useState(false);
     return(
         <Container 
@@ -57,9 +57,15 @@ const Legend = styled.div`
 
 const CaseImgContainer = styled.div`
     width: 60px;
+    height: 80px;
     margin: 0 auto;
+    position: relative;
+
+    & > div{
+        position: absolute;
+        bottom: 0;
+    }
 
     @media (min-width: 767px){
-
     }
 `

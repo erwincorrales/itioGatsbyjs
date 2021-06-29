@@ -51,8 +51,8 @@ const Energy = () =>(
             </PowerSection>
             <Autonomy>
                 <h3>Autonomy Power</h3>
-                <p clasName='d-md-none'>Autonomy power is a solar<br/>management platform.</p>
-                <p clasName='d-none d-md-block'>Autonomy power is a solar management platform.</p>
+                <p className='d-md-none'>Autonomy power is a solar<br/>management platform.</p>
+                <p className='d-none d-md-block'>Autonomy power is a solar management platform.</p>
                 <p className='d-md-none'>We saved a solar farm<br/> over 4000k dollars a month<br/> just by controlling their output!</p>
                 <p className='d-none d-md-block'>We saved a solar farm over 4000k dollars a month<br/> just by controlling their output!</p>
 
@@ -82,7 +82,7 @@ const Article = styled.article`
     }
 
     h3{ 
-        font: 700 25px cambria 
+        font: 700 25px cambria; 
     }
 
     @media (min-width: 767px){

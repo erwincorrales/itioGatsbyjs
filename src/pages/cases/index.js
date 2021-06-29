@@ -34,8 +34,9 @@ const Section = styled.section`
   align-content: center;
   /* flex: 1 1 0; */
 
-  div:first-child{
+  &>div{
       max-width: 800px;
+      min-height: 360px;
   }
 
   

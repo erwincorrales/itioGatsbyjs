@@ -10,7 +10,6 @@ const Footer = ({pAbsolute})=>{
                     <a href='http://facebook.com'>
                         <StaticImage 
                             src='../images/footer/Facebook-sm.png' 
-                            width={24}
                             alt='social'/>
                         {/* <StaticImage 
                             src='../images/footer/Facebook.png' 
@@ -19,11 +18,11 @@ const Footer = ({pAbsolute})=>{
                             alt='social'/> */}
                     </a>
                     <a href='http://twitter.com' >
-                        <StaticImage src='../images/footer/Twitter-sm.png' width={50} alt='social'/>
+                        <StaticImage src='../images/footer/Twitter-sm.png' alt='social'/>
                         {/* <StaticImage src='../images/footer/Twitter.png' width={50} className='d-none d-md-block' alt='twitter'/> */}
                     </a>
                     <a href='http://instagram.com' >
-                        <StaticImage src='../images/footer/Instagram-sm.png' width={40}  alt='instagram'/>
+                        <StaticImage src='../images/footer/Instagram-sm.png' alt='instagram'/>
                         {/* <StaticImage src='../images/footer/Instagram.png' width={50} className='d-none d-md-block' alt='instagram'/> */}
                     </a>
                 </Social>
@@ -67,16 +66,21 @@ const FooterContainer = styled.div`
         }
         a{
             padding-right: 26px;
+            width: 50px;
         }
     }
 `
 
 const Social = styled.div`
-    color: white;
     width: 200px;
     bottom: 9.6vw;
     left: 60px;
     z-index: 1;
+
+    a:first-child(){
+        border: 1px solid white;
+    }
+
     @media (min-width: 767px){
         bottom: 5vw;
     }

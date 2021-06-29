@@ -28,7 +28,7 @@ const Careers = () =>{
                         <ElImgContainer>
                             <StaticImage src='../images/careers/itio-career-el1.png' alt='itio-career-img-1'/>
                         </ElImgContainer>
-                        <h3>Product Delevopment</h3>
+                        <h3>Product Development</h3>
                         <div>
                             <p>ITIO launches products with a systematic flow that benefits bussiness with solutions that have high impact on their clients</p>
                         </div>
@@ -140,6 +140,10 @@ const Article = styled.article`
             font:700 50px junegull;
             margin-bottom: 24px;
         }
+    }
+
+    @media (min-width: 991px){
+        margin-top: 100px;
     }
 `
 //header
@@ -259,7 +263,7 @@ const Jobs = styled.section`
     padding: 40px 0;
 
     h2{
-        font: 900 25px junegull;
+        font: 900 25px cambria;
         margin: 0;
         padding: 0;
         margin-bottom: 8px;
