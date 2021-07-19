@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import styled from 'styled-components';
 
-const CaseFolder = ( { title, link }) =>{
+const CaseFolder = ( { children, link }) =>{
     const [open, setOpen] = React.useState(false);
     return(
         <Container 
@@ -22,7 +22,7 @@ const CaseFolder = ( { title, link }) =>{
                         className={open ? 'd-block mx-auto' : 'd-none'}
                     />
                 </CaseImgContainer>
-                <Legend>{title}</Legend> 
+                <Legend>{children}</Legend> 
             </Link>
         </Container>
     )

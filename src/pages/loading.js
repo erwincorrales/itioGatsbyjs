@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
-const Loading = () =>{
+const Loading = ({hide}) =>{
 
     const [count, setCount] = useState(0);
 
     const tick = () =>{
-        if (count === 10) setCount(1);
+        if (count === 11) hide;
         else setCount(count + 1);
     }
 

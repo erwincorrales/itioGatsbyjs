@@ -11,11 +11,11 @@ const CaseStudiesDashboard = () => (
     <Seo title="Case Studies"/>
     <Section>
       <div className='d-flex flex-wrap align-content-around align-items-baseline justify-content-around p-0 p-md-4 mx-1' >
-        <CaseFolder title='KOALAQA' link='/cases/koalaqa' />   
-        <CaseFolder title='TRIPRITE' link='/cases/triprite' />
-        <CaseFolder title='OIL RIG HUMAN SAFETY MANAGMENT' link='/cases/oilrig' />
-        <CaseFolder title='ENERGY MANAGMENT' link='/cases/energy'/>
-        <CaseFolder title='SWIFTSOLE' link='/cases/swiftsole' />
+        <CaseFolder link='/cases/koalaqa'>KOALAQA</CaseFolder>   
+        <CaseFolder link='/cases/triprite'>TRIPRITE</CaseFolder>
+        <CaseFolder link='/cases/oilrig'><p>OIL RIG<br/>HUMAN SAFETY<br/>MANAGMENT</p></CaseFolder>
+        <CaseFolder link='/cases/energy'>ENERGY MANAGMENT</CaseFolder>
+        <CaseFolder link='/cases/swiftsole'>SWIFTSOLE</CaseFolder>
       </div>
     </Section>
   </Layout>
@@ -24,25 +24,23 @@ const CaseStudiesDashboard = () => (
 export default CaseStudiesDashboard
 
 const Section = styled.section`
-  position: absolute;
-  background: white;
-  top:0; left:0; width: 100vw;
-  z-index: 10;
-  height: calc(100vh - 100px);
   display: flex;
   justify-content: center;
   align-content: center;
-  /* flex: 1 1 0; */
+  background: white;
+  width: 100vw;
+  z-index: 10;
+  height: calc(100vh - 100px);
 
   &>div{
       max-width: 800px;
-      min-height: 360px;
   }
 
   
   @media (min-width: 767px){
     position: relative;
     height: auto;
+    min-height: 500px;
     div > div:nth-child(1){
       order: 1;
     }

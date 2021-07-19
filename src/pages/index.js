@@ -23,15 +23,14 @@ const IndexPage = () => {
   
   useEffect(()=>{
     let firstLoad = sessionStorage.getItem('itioFirstLoad');
-    if(!firstLoad) setTimeout(()=>closeLoadingView(), 650);
-    else setShowLoadingPage(false);
+    if(firstLoad) setShowLoadingPage(false);
   },[]);
 
 
   return(
     <div>
       {
-      showLoadingPage ? <Loading/> :  
+      showLoadingPage ? <Loading hide={closeLoadingView}/> :  
       <Layout footerAbsolute >
         <Seo title="Home" />    
         <Article>
